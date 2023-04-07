@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', async () => {
       // const placeContain = document.getElementById('placeHolderContainer')
       const placeContain = document.querySelector('.row')
 
-      
+
 
       for(let i = 0; i < numOfCons; i++){
         placeHolderHTML += `
@@ -92,8 +92,6 @@ window.addEventListener('DOMContentLoaded', async () => {
         if (detailResponse.ok) {
 
           const deletePlaceHolder = document.querySelector('.placeholderz')
-          deletePlaceHolder.remove()
-
 
           const column = document.querySelector('.row')
           const details = await detailResponse.json();
@@ -116,7 +114,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 						update
             );
 
-            column.innerHTML += html;
+            column.innerHTML.replace(deletePlaceHolder, html)
 
           }
 

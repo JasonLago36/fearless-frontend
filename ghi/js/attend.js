@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
     //gets event listener for creating a new attendee
     const formListen = document.getElementById('create-attendee-form');
-	formListen.addEventListener('submit', async (e) => {
+	  formListen.addEventListener('submit', async (e) => {
 		e.preventDefault();
 		const formData = new FormData(formListen);
 		const json = JSON.stringify(Object.fromEntries(formData));
@@ -35,8 +35,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 		};
 		const response = await fetch(attendeeUrl, fetchConfig);
 		if (response.ok) {
-            const alertSuccess = document.getElementById('success-message')
-            alertSuccess.classList.remove('d-none')
+      const alertSuccess = document.getElementById('success-message')
+      alertSuccess.classList.remove('d-none')
 			formListen.reset();
 			const newAttendee = await response.json();
 			console.log(newAttendee);

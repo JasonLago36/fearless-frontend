@@ -57,10 +57,11 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    'http://localhost:3001',
 ]
 
 CRONJOBS = [
-    ("* * * * *", "attendees.poll.get_conferences"),
+    ("* * * * *", "attendees.conference_poll.get_conferences"),
 ]
 
 ROOT_URLCONF = "attendees_bc.urls"
