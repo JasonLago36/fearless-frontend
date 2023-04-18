@@ -18,18 +18,33 @@ function Nav() {
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 							<li className="nav-item">
-								<a className="nav-link" aria-current="page" href="index.html"
+								<a className="nav-link" aria-current="page" href="index"
 									>Home</a
 								>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link" aria-current="page" href="new-location.html"
+								<a className="nav-link" aria-current="page" href="http://localhost:3001/locations/new "
 									>New Location</a
 								>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link active" aria-current="page" href="#"
+								<a className="nav-link active" aria-current="page" href="http://localhost:3001/conferences/new "
 									>New Conference</a
+								>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link active" aria-current="page" href="http://localhost:3001/attendees "
+									>Attending!</a
+								>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link active" aria-current="page" href="http://localhost:3001/attendees/new "
+									>New Attendees!</a
+								>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link active" aria-current="page" href="http://localhost:3001/presentations/new"
+									>New Presentation</a
 								>
 							</li>
                             </ul>

@@ -99,10 +99,10 @@ def api_list_presentations(request, conference_id):
         )
 
 
-def api_show_presentation(request, pk):
+def api_show_presentation(request, id):
     """
     Returns the details for the Presentation model specified
-    by the pk parameter.
+    by the id parameter.
 
     This should return a dictionary with the presenter's name,
     their company name, the presenter's email, the title of
@@ -124,7 +124,7 @@ def api_show_presentation(request, pk):
         }
     }
     """
-    presentation = Presentation.objects.get(id=pk)
+    presentation = Presentation.objects.get(id=id)
     return JsonResponse(
         presentation,
         encoder=PresentationDetailEncoder,
@@ -133,8 +133,8 @@ def api_show_presentation(request, pk):
 
 
 @require_http_methods(["PUT"])
-def api_approve_presentation(request, pk):
-    presentation = Presentation.objects.get(id=pk)
+def api_approve_presentation(request, id):
+    presentation = Presentation.objects.get(id=id)
     presentation.approve()
     body = {
         "presenter_name": presentation.presenter_name,
@@ -150,8 +150,8 @@ def api_approve_presentation(request, pk):
 
 
 @require_http_methods(["PUT"])
-def api_reject_presentation(request, pk):
-    presentation = Presentation.objects.get(id=pk)
+def api_reject_presentation(request, id):
+    presentation = Presentation.objects.get(id=id)
     presentation.reject()
     body = {
         "presenter_name": presentation.presenter_name,
